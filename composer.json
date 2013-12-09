@@ -1,0 +1,42 @@
+{
+	"name": "Reserva Cancha",
+	"require": {
+		"laravel/framework": "4.0.*",
+		"jasonlewis/basset": "dev-master",
+		"nesbot/carbon"    : "*",
+		"bkwld/croppa"     : "dev-master"
+	},
+	"require-dev": {
+		"way/generators"             : "dev-master",
+		"barryvdh/laravel-ide-helper": "dev-master",
+		"leafo/lessphp"              : "dev-master",
+		"natxet/CssMin"              : "dev-master",
+		"mrclay/minify"              : "dev-master",
+		"phpunit/phpunit"            : "3.7.*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev"
+}

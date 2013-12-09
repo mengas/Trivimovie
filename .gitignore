@@ -1,0 +1,19 @@
+# Laravel
+/bootstrap/compiled.php
+
+# Config
+app/config/local
+
+# Basset
+web/assets/compiled/application
+
+# Uploads
+web/uploads
+
+# Composer
+/vendor
+composer.lock
+
+# ...
+.DS_Store
+Thumbs.db

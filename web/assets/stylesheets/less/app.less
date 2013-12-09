@@ -1,0 +1,79 @@
+/***************
+/   Commons
+/**************/
+
+body {
+    background: url('/assets/images/lyonnette.png') repeat;
+}
+
+/* Navbar */
+.navbar {
+    border-radius: 0px;
+}
+
+.quiz-img {
+    box-shadow: 1px 5px 14px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-options {
+    -webkit-box-shadow: 1px 1px 12px -6px rgba(0, 0, 0, 0.75);
+       -moz-box-shadow: 1px 1px 12px -6px rgba(0, 0, 0, 0.75);
+            box-shadow: 1px 1px 12px -6px rgba(0, 0, 0, 0.75);
+    li {
+        background: white;
+        padding: 4px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+
+        &:first-child {
+            -webkit-border-top-left-radius: 3px;
+            -webkit-border-top-right-radius: 3px;
+            -moz-border-radius-topleft: 3px;
+            -moz-border-radius-topright: 3px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        &:last-child {
+            -webkit-border-bottom-right-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            -moz-border-radius-bottomright: 3px;
+            -moz-border-radius-bottomleft: 3px;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        input {
+            border-left: 1px solid black;
+        }
+
+        .status {
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+        }
+    }
+}
+
+/**************
+/   Typos
+**************/
+/*
+    font-family: 'La Belle Aurore', cursive;
+    font-family: 'Sacramento', cursive;
+    font-family: 'Indie Flower', cursive;
+*/
+h1.quiz-title,
+h1.title {
+    font-family: 'Sacramento', cursive;
+    text-shadow: 1px 3px 1px #fff;
+}
+
+@media (max-width: 768px) {
+  h1.quiz-title {
+    font-size: 30px;
+  }
+}
