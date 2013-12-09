@@ -2,18 +2,21 @@
 
 ## Environment 
 
- - A HTTP service is required, with php support and a virtual host pointing to the folder "web/" located in the root directory path of the project
- - For example, for those in Windows using XAMPP (adapt it to WAMP if that is what you are using) this host will suit you perfectly:
+ - You can use PHP's built-in web server, to fast run this app. For that I recomend have a host pointing to local (`/etc/hosts` Linux, `C:/Windows/System32/drivers/etc/hosts` Windows) like so
+
+    127.0.0.1 local.trivimovie.com
+
+ - You could also be using a virtual host to serve the web app. Apache example:
 
         # ReservaCanhcas
         <VirtualHost *:80>
-            DocumentRoot "C:/xampp/htdocs/reservacanchas/web"
-            ServerName local.reservacanchas.com
+            DocumentRoot /var/www/trivimovie.com/web
+            ServerName local.trivimovie.com
             
-            ErrorLog "C:/xampp/apache/logs/reservacanchas-error.log"
+            ErrorLog /var/logs/apache2/trivimovie-error.log
             LogLevel notice
 
-            <Directory "C:/xampp/htdocs/reservacanchas/web">
+            <Directory "/var/www/trivimovie.com/web">
                 Options Indexes Includes FollowSymLinks MultiViews
                 AllowOverride all
                 Order allow,deny
@@ -21,36 +24,24 @@
             </Directory>
         </VirtualHost>
 
- - Don't forget the 127.0.0.1 local.reservacanchas.com hostname
-
-## Server Requirements
+## Requirements
 
  - Laravel basic requirements: http://laravel.com/docs/installation#server-requirements
+ - Having composer available
 
-## App Install Steps
+## Install Steps
 
- - First step is to go to the folder where the app has been extracted (example: cd /var/www/reservacanchas)
-
- - Inside the directory at its root level, composer must executed to install the dependencies:
+ - Inside the cloned repository (or exctracted), composer must be executed to install vendors
 
         $ ./composer.phar install => This will take a while
-
- - After composer finishes, we need to edit (I have created the folder for you) the config file located in app/config/local
-
-        app/config/database.php => Set the MySQL auth credencials, and the databases (already created) to be used
     
- - Generate assets files:
+ - Generate assets files (optional):
 
         $ php artisan basset:build
-    
- - Now, the last step is to migrate and seed the database
- 
-        $ php artisan migrate:install --env=local
-        $ php artisan migrate --seed  --env=local
 
 
-# Usage notes
+## Support
 
-## Seeded data
+I will write a blog entry soon, documenting this project.
 
- - If you check app/database/seeds/UsersTableSeeder.php file, you will see that 2 users are created with their respective password. Therefore, those credentials may be used to start testing/using the app
+Meanwhile, you may find me at http://twitter.com/w0rldart
