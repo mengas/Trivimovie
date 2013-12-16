@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>
-        Reserva Canchas
+        Trivimovie, a trivia game about movies and actors.
     </title>
 
-    <meta name="description" content="">
+    <meta name="description" content="A trivia game about movies and actors.">
 
     <!--  Mobile Viewport Fix -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
