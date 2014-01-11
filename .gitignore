@@ -5,7 +5,8 @@
 app/config/local
 
 # Basset
-web/assets/compiled/application
+web/assets/compiled/application-css
+web/assets/compiled/application-js
 
 # Uploads
 web/uploads

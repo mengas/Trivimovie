@@ -12,7 +12,6 @@ class HomeController extends BaseController {
         // Random
         //User::order_by(DB::raw('RAND()'))->get();
 
-        
         #$question = Question::find(rand(1,3));
         return View::make('desktop.home.index');
 	}
@@ -49,7 +48,7 @@ class HomeController extends BaseController {
     {
         // http://tutorial.apicultur.com/rest/1.0/pelis/actorimagen
         $actor = self::getData("http://tutorial.apicultur.com/rest/1.0/pelis/actorimagen");
-        
+
         $image = '/uploads/'.md5($actor[0]['imagen']);
         $question = 'Who is this actor?';
         
@@ -69,6 +68,11 @@ class HomeController extends BaseController {
         return View::make('desktop.questions.show', compact('image', 'question', 'answers', 'correctAnswer'));
     }
 
+    /**
+     * asdadasdasdas asd asd a
+     * @param type $url 
+     * @return type
+     */
     private function getData($url)
     {
         $ch = curl_init($url);                                                                      
